@@ -3,6 +3,7 @@
 Flutter Project For Vimigo Technical Test
 
 **Note: The number of contact list displayed when the app is launched is 10 **
+**Note: Recommended size of contact list is 20 & above for testing pull-to-refresh & pulling-up loading functions**
 
 
 List of Plugin used
