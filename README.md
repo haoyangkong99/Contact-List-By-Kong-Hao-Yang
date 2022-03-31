@@ -1,16 +1,14 @@
 # contactlist
 
-A new Flutter project.
+Flutter Project For Vimigo Technical Test
 
-## Getting Started
+**Note: The number of contact list displayed when the app is launched is 10 **
+**Note: Recommended size of contact list is 20 & above for testing pull-to-refresh & pulling-up loading functions**
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+List of Plugin used
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. date_format: ^2.0.5
+2. toggle_switch: ^1.4.0
+3. intl: ^0.17.0
+4. share_plus: ^4.0.3
