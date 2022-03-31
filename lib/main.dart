@@ -8,7 +8,7 @@ import 'package:contactlist/model/contact.dart';
 import 'package:share_plus/share_plus.dart';
 
 void main() {
-  runApp(RootRestorationScope(child: const MyApp(), restorationId: "root",));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+      restorationScopeId: 'root',
       debugShowCheckedModeBanner: false,
       title: 'Contact List',
       theme: ThemeData(
@@ -48,10 +48,11 @@ class _contactbodyState extends State<contactbody> with RestorationMixin {
   @override
 
 
+
   bool switching=false;
   bool ori=false;
   int currentpos=1;
-  final RestorableInt _Tindex = RestorableInt(0);
+  final RestorableInt _Tindex = RestorableInt(1);
   String get restorationId => 'contactbody';
 
   List <contactinfo> items=[];
@@ -161,7 +162,7 @@ double halfnum=0;
   activeFgColor: Colors.white,
   inactiveBgColor: Colors.grey,
   inactiveFgColor: Colors.white,
-  initialLabelIndex: currentpos,
+  initialLabelIndex: _Tindex.value,
   totalSwitches: 2,
   labels: ['Original\nTime', 'Time\nAgo'],
   radiusStyle: true,
@@ -169,13 +170,15 @@ double halfnum=0;
       if(ori)
     {
       ori=false;
-      currentpos=1;
+      // currentpos=1;
+      _Tindex.value=1;
 
     }
     else
     {
       ori=true;
-      currentpos=0;
+      // currentpos=0;
+        _Tindex.value=0;
     }
 
     setState(() {
@@ -215,9 +218,13 @@ double halfnum=0;
                                    physics: BouncingScrollPhysics(),
 
                                    shrinkWrap: true,
-                                             itemCount: show.length,
+                                             itemCount: show.length==items.length?show.length+1:show.length,
                                              itemBuilder:(context,index)
                                              {
+                                               if (index==items.length)
+                                               {
+                                                 return endOfList();
+                                               }
                                                return ListTile(
                                     leading: Text((index+1).toString()),
                                     title: Text(show[index].user),
@@ -237,7 +244,7 @@ double halfnum=0;
 
                                              ),
                        ),
-                       endOfList()
+
                      ],
                    ),
                  );}
@@ -338,4 +345,5 @@ show.add(items[p]);
         });
 
   });}
+
 }
