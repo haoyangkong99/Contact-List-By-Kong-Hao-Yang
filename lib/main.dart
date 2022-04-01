@@ -48,7 +48,7 @@ class _contactbodyState extends State<contactbody> with RestorationMixin {
   @override
 
 
-
+  bool loading=false;
   bool switching=false;
   bool ori=false;
   int currentpos=1;
@@ -218,13 +218,23 @@ double halfnum=0;
                                    physics: BouncingScrollPhysics(),
 
                                    shrinkWrap: true,
-                                             itemCount: show.length==items.length?show.length+1:show.length,
+                                             itemCount: show.length+1,
                                              itemBuilder:(context,index)
                                              {
                                                if (index==items.length)
                                                {
                                                  return endOfList();
                                                }
+                                              if (index==show.length)
+                                              {
+                                                return Container(
+                                                  child: SizedBox(
+                                                    height:40,
+                                                    child: Center(child: CircularProgressIndicator(strokeWidth: 2.0)),
+                                                  ),
+                                                );
+                                              }
+
                                                return ListTile(
                                     leading: Text((index+1).toString()),
                                     title: Text(show[index].user),
