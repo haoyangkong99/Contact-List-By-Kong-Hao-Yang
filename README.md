@@ -12,3 +12,6 @@ List of Plugin used
 2. toggle_switch: ^1.4.0
 3. intl: ^0.17.0
 4. share_plus: ^4.0.3
+
+
+https://youtube.com/shorts/FtiVDz46bMc
