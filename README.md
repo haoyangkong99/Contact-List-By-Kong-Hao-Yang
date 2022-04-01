@@ -12,4 +12,8 @@ List of Plugin used
 2. toggle_switch: ^1.4.0
 3. intl: ^0.17.0
 4. share_plus: ^4.0.3
+
+
+
+
 <a href="https://imgur.com/zzqwuUd"><img src="https://i.imgur.com/zzqwuUd.gif" title="source: imgur.com" width="400" height="600" /></a>
